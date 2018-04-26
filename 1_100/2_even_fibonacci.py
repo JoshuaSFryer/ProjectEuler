@@ -40,10 +40,17 @@ def fibonacci(n):
 
         return curr
 
+"""
+The golden-ratio approach to finding the fibonacci numbers is probably faster, especially on Intel machines
+that have a native SQRT instruction (assuming that C, and by extension Python, make use of this fact).
+
+Regardless, it's O(1), and so should be faster anyway.
+"""
+goldenRatio = (1 + math.sqrt(5))/2
+
 
 def fibGolden(n):
-    ratio = (1 + math.sqrt(5))/2
-    return int((ratio ** n - (1-ratio)**n)/math.sqrt(5))
+    return int((goldenRatio ** n - (1-goldenRatio)**n)/math.sqrt(5))
 
 
 # determine which fibonacci number has a value of 4 million or greater
@@ -51,14 +58,12 @@ count = 0
 fib = 0
 while (fib <= 4000000):
     count += 1
-    fib = fibonacci(count)
-
-print("The " + str(count) + "th fibonacci number is " + str(fib))
+    fib = fibGolden(count)
 
 sumOfEvens = 0
 for i in range(0, count):
-    term = fibonacci(i)
+    term = fibGolden(i)
     if term % 2 == 0:
         sumOfEvens += term
 
-print(sumOfEvens)
+print("The sum of the first " + str(count) + " even Fibonacci numbers is " + str(sumOfEvens))

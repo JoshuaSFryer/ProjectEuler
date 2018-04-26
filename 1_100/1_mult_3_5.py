@@ -9,7 +9,6 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 
-# this is basically fizz buzz
 max_num = 1000
 sum = 0
 
