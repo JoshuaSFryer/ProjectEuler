@@ -31,7 +31,6 @@ for i in range(999, 100, -1):
     for j in range(999, 100, -1):
         product = i * j
         if isPalindrome(product):
-            if (product) > largestSoFar:
-                largestSoFar = product
+            largestSoFar = max(largestSoFar, product)
 
 print("The largest palindromic product from two 3-digit numbers is " + str(largestSoFar))
