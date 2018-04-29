@@ -1,18 +1,9 @@
 """
-10001st prime
-Problem 7
-
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-
-What is the 10 001st prime number?
-"""
-
-"""
 This implements the Sieve of Eratosthenes, searching for all primes from 2 - 100 000. If the 10001st prime is not
 found within this range, it continues searching between 2 - 200 000, and so on
 """
-"""
-def sieve(bound:int):
+
+def eratosthenes(bound:int):
 
     # Working with an array of booleans for marking is better than using a dictionary as originally planned
     # Since the keys are simply consecutive integers, might as well use array indices.
@@ -49,36 +40,5 @@ def sieve(bound:int):
     for i in range(2, bound):
         if nums[i] is True:
             primes.append(i)
-    print(str(len(primes)) + " prime numbers found")
+    print(str(len(primes)) + " prime numbers found between 2 and " + str(bound))
     return (primes)
-"""
-
-from helpermodules import primeSieve
-# Initial search bounds
-testRange = 100000
-
-while True:
-    primeList = primeSieve.eratosthenes(testRange)
-
-    # If the 10001st prime has not been found, expand the search range
-    if len(primeList) < 10001:
-        testRange *= 2
-
-    # Otherwise, we have our solution and simply need to extract it
-    else:
-        """
-        for i in range(0, len(primeList)):
-            print("The " + str(i) + "th prime number is: " + str(primeList[i]))
-        """
-
-        print("The 10001st prime number is " + str(primeList[10000]))
-        break
-
-
-
-
-
-
-
-
-
