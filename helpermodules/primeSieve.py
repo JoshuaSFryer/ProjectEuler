@@ -1,9 +1,7 @@
-"""
-This implements the Sieve of Eratosthenes, searching for all primes from 2 - 100 000. If the 10001st prime is not
-found within this range, it continues searching between 2 - 200 000, and so on
-"""
-
 def eratosthenes(bound:int):
+    """
+    Implements the Sieve of Eratosthenes, searching for all primes from 2 - the provided upper boundary
+    """
 
     # Working with an array of booleans for marking is better than using a dictionary as originally planned
     # Since the keys are simply consecutive integers, might as well use array indices.
