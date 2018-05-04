@@ -11,9 +11,7 @@ with open("problem_8_digits.txt", 'r') as f:
 # Python's replace() method did not seem to be working, so hack fix here to get rid of the newlines
 strippedString = str()
 for char in digitString:
-    if char == "\n":
-        pass
-    else:
+    if char != "\n":
         strippedString += char
 
 lowBound = 0
@@ -22,6 +20,7 @@ hiBound = 12
 # Tuple format: (Index of first digit in the 13-digit sequence, product)
 bestSoFar = (0, 1)
 
+# Search iteratively through each string of 4 digits within the 1000 digit number, between lowBound and hiBound
 while hiBound <= 1000:
     sample = strippedString[lowBound:hiBound+1]
 

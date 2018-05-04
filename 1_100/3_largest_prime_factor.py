@@ -8,6 +8,7 @@ What is the largest prime factor of the number 600851475143 ?
 
 """
 
+
 def primeBreakdown(n:int):
     """
     Trial division implementation. Based on the implementation found on Wikipedia at:
@@ -22,7 +23,8 @@ def primeBreakdown(n:int):
     divisor = 2
 
     while n > 1:
-        # If the number is divisible by the divisor, then it's a factor. Divide the number by it and continue decomposing
+        # If the number is divisible by the divisor, then it's a factor.
+        # Divide the number by it and continue decomposing
         if (n % divisor) == 0:
             factors.add(divisor)
             n = n / divisor
@@ -32,8 +34,5 @@ def primeBreakdown(n:int):
             divisor += 1
     return factors
 
+
 print("The largest prime factor of 600851475143 is " + str(max(primeBreakdown(600851475143))))
-
-
-
-

@@ -21,19 +21,5 @@ while True:
 
     # Otherwise, we have our solution and simply need to extract it
     else:
-        """
-        for i in range(0, len(primeList)):
-            print("The " + str(i) + "th prime number is: " + str(primeList[i]))
-        """
-
         print("The 10001st prime number is " + str(primeList[10000]))
         break
-
-
-
-
-
-
-
-
-

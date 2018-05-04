@@ -56,7 +56,7 @@ def fibGolden(n):
 # determine which fibonacci number has a value of 4 million or greater
 count = 0
 fib = 0
-while (fib <= 4000000):
+while fib <= 4000000:
     count += 1
     fib = fibGolden(count)
 

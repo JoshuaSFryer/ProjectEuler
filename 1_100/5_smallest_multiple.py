@@ -14,7 +14,7 @@ testNum = 10**9
 # We only need to check primes and the most composite numbers (i.e. if we check 18, we don't need to check 2, 9, 3, 6)
 numsToCheck = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11]
 
-multples = list()
+multiples = list()
 
 while testNum < 10 ** 11:
     isMultiple = True
@@ -23,13 +23,13 @@ while testNum < 10 ** 11:
             isMultiple = False
 
     if isMultiple:
-        multples.append(testNum)
+        multiples.append(testNum)
         print("solution found: " + str(testNum))
 
     testNum += 1
 
 
-print(multples)
+print(multiples)
 
 # putting this one on hold for now. Returned 1163962800 which Proj. Euler says is incorrect. Will have to revise
 # and make more efficient for easier testing.
